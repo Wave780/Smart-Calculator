@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smart_calculator/home_screen.dart';
 import 'package:smart_calculator/theme/theme.dart';
-import 'package:smart_calculator/theme/theme_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(ChangeNotifierProvider(
-      create: (BuildContext context) => ThemeProvider(), child: const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -36,11 +33,9 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
-
     return MaterialApp(
       title: 'Smart Calculator',
-      themeMode: themeProvider.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
+      //themeMode: themeProvider.isDarkTheme ? ThemeMode.dark : ThemeMode.light,
       debugShowCheckedModeBanner: false,
       home: CalculatorApp(
         theme: _isDarkMode ? CalculatorTheme.dark : CalculatorTheme.light,

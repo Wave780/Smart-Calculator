@@ -24,9 +24,9 @@ class CalculatorTheme {
   );
 
   static const CalculatorTheme light = CalculatorTheme(
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.white38,
     displayColor: Colors.black,
-    numberButtonColor: Color(0xFFF0F0F0),
+    numberButtonColor: Color(0xFF333333),
     operationButtonColor: Colors.blue,
     textColor: Colors.black,
   );

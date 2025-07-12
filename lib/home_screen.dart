@@ -120,7 +120,7 @@ class _CalculatorAppState extends State<CalculatorApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: _theme.backgroundColor,
+        backgroundColor: widget.theme.backgroundColor,
         body: SafeArea(
             child: Column(
           children: [
@@ -192,7 +192,7 @@ class _CalculatorAppState extends State<CalculatorApp> {
               child: Text(
                 _state.display,
                 style: TextStyle(
-                  color: _theme.displayColor,
+                  color: widget.theme.displayColor,
                   fontSize: _getDisplayFontSize(),
                   fontWeight: FontWeight.w300,
                 ),
@@ -303,9 +303,9 @@ class _CalculatorAppState extends State<CalculatorApp> {
   Color _getDefaultButtonColor(ButtonType type) {
     switch (type) {
       case ButtonType.number:
-        return _theme.numberButtonColor;
+        return widget.theme.numberButtonColor;
       case ButtonType.operation:
-        return _theme.operationButtonColor;
+        return widget.theme.operationButtonColor;
       case ButtonType.function:
         return Colors.grey[600]!;
       case ButtonType.memory:
@@ -316,7 +316,7 @@ class _CalculatorAppState extends State<CalculatorApp> {
   }
 
   Color _getDefaultTextColor(ButtonType type) {
-    return _theme.textColor;
+    return widget.theme.textColor;
   }
 
   Widget _buildHistory() {
